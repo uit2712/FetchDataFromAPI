@@ -1,0 +1,25 @@
+--------------Fetch data from API in React Native, apply pattern MVC--------------
+- STEP 1: Install necessary modules: 'react-navigation', 'react-native-gesture-handler', 'events',
+'react-native-vector-icons'
++ npm install --save react-navigation react-native-gesture-handler events react-native-vector-icons
++ react-native link
+- STEP 2: Clone HeroUI (UI to create, update, delete hero) from branch 'master': https://github.com/uit2712/HeroUI
+- STEP 3: Add file 'HTTPMethods.js' to define constant method strings: GET, POST, DELETE, PUT
+- STEP 4: Create controller HeroController
++ Add function 'getHeader(method: string, body={})' to get return header with an input http method 
+and a body if it has (get, post, delete, put)
+
+let httpHeader = {
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        }
+    }
+
++ Add function 'processResponse(response: Response)' to get return object with 2 attributes for next step: 
+responseJson (object), responseStatus (number)
++ Add function 'checkIfResponseValids(responseStatus: number)' to check if we get valid response 
+like: 200
++ Create new Hero
++ Update existing hero
++ Delete existing hero
